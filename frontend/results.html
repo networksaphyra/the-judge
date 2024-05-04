@@ -7,17 +7,45 @@
     <link rel="stylesheet" href="static/results.css">
     <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modal</title>
+    <link href="static/popup.css" rel="stylesheet">
+    <script defer src="static/popup.js"></script>
+</head>
+
+    <body>
+    <div class="modal" id="modal">
+        <div class="modal-header">
+        <div class="title">Pros</div>
+        <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quod alias ut illo doloremque eum ipsum obcaecati distinctio debitis reiciendis quae quia soluta totam doloribus quos nesciunt necessitatibus, consectetur quisquam accusamus ex, dolorum, dicta vel? Nostrum voluptatem totam, molestiae rem at ad autem dolor ex aperiam. Amet assumenda eos architecto, dolor placeat deserunt voluptatibus tenetur sint officiis perferendis atque! Voluptatem maxime eius eum dolorem dolor exercitationem quis iusto totam! Repudiandae nobis nesciunt sequi iure! Eligendi, eius libero. Ex, repellat sapiente!
+        </div>
+    </div>
+    <div id="overlay"></div>
+    </body>
+
+
 <body>
     <h1>Results</h1>
+    <hr color=“#658c5e” noshade size="">
     <div id="overall">
-        <h2>Overall</h2>
-        
+        <h2>Overall</h2>       
     </div>
+    
     <div id="creativity">
-        <h2>Creativity</h2>
+        <h2>Creativity
+            <button data-modal-target="#modal" id="feedback-button-creativity" type="button">Feedback</button> 
+        </h2>
     </div>
     <div id="technology">
-        <h2>Technology</h2>
+        <h2>Technology
+            <button data-modal-target="#modal" id="feedback-button-creativity" type="button">Feedback</button> 
+        </h2>
     </div>
     <div id="design">
         <h2>Design</h2>
@@ -28,6 +56,7 @@
     <div id="completeness">
         <h2>Completeness</h2>
     </div>
+
     <script src="static/results.js"></script>
 </body>
 </html>
