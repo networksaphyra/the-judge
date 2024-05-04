@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    padding-top: 40px;
+    font-size: 3em !important;
+    text-align: center;
+
+}
+
+main {
+    padding-left: 10em;
+    padding-right: 10em;
+}
+
+h2 {
+    padding-top: 30px;
+}
+
+#overall {
+    padding-top: 1em;
+    padding-bottom: 3em;
+}
+
