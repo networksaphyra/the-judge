@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const y = d3.scaleLinear()
         .rangeRound([height, 0])
         .domain([0, d3.max(data, d => d.rating)]);
+            
 
     // Add bars
     g.selectAll(".bar")
@@ -52,14 +53,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         .attr("class", "axis")
         .call(d3.axisLeft(y).ticks(5));
 
-    // Add X axis label
-    g.append("text")
-        .attr("class", "axis-label")
-        .attr("x", width / 2)
-        .attr("y", height + margin.top + 20)
-        .attr("text-anchor", "middle")
-        .text("Categories");
-
     // Add Y axis label
     g.append("text")
         .attr("class", "axis-label")
@@ -70,3 +63,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
         .attr("text-anchor", "middle")
         .text("Rating");
 });
+
