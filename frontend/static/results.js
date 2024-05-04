@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     g.append("text")
         .attr("class", "axis-label")
         .attr("transform", "rotate(-90)")
-        .attr("y", 0 - margin.left + 10)
+        .attr("y", -10 - margin.left + 10)
         .attr("x", 0 - (height / 2))
         .attr("dy", "1em")
         .attr("text-anchor", "middle")

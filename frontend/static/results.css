@@ -41,7 +41,29 @@ h2 {
     padding-bottom: 3em;
 }
 
-#feedback-button-creativity {
-    margin-left: 20em;
+.open-modal-button {
     background-color: #8ba888;
+    position: absolute;
+    margin-right: 2em;
+    right: 0;
+    z-index: 1;
+    padding: 0.8em;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-weight: bold;
+    transition: background-color .3s;
+}
+
+.open-modal-button:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background-color: #6e7f6c;
+}
+
+.modal {
+    z-index: 10;
+}
+
+#overlay {
+    z-index: 2;
 }

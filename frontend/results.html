@@ -15,20 +15,65 @@
     <link href="static/popup.css" rel="stylesheet">
     <script defer src="static/popup.js"></script>
 </head>
-
-    <body>
-    <div class="modal" id="modal">
+<body>
+    <!-- First Modal -->
+    <div class="modal" id="modal1">
         <div class="modal-header">
-        <div class="title">Pros</div>
-        <button data-close-button class="close-button">&times;</button>
+            <div class="title">Feedback</div>
+            <button data-close-button class="close-button">&times;</button>
         </div>
         <div class="modal-body">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quod alias ut illo doloremque eum ipsum obcaecati distinctio debitis reiciendis quae quia soluta totam doloribus quos nesciunt necessitatibus, consectetur quisquam accusamus ex, dolorum, dicta vel? Nostrum voluptatem totam, molestiae rem at ad autem dolor ex aperiam. Amet assumenda eos architecto, dolor placeat deserunt voluptatibus tenetur sint officiis perferendis atque! Voluptatem maxime eius eum dolorem dolor exercitationem quis iusto totam! Repudiandae nobis nesciunt sequi iure! Eligendi, eius libero. Ex, repellat sapiente!
+            Content for Modal 1
         </div>
     </div>
-    <div id="overlay"></div>
-    </body>
 
+    <!-- Second Modal -->
+    <div class="modal" id="modal2">
+        <div class="modal-header">
+            <div class="title">Feedback</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            Content for Modal 2
+        </div>
+    </div>
+
+    <!-- Third Modal -->
+    <div class="modal" id="modal3">
+        <div class="modal-header">
+            <div class="title">Feedback</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            Content for Modal 3
+        </div>
+    </div>
+
+    <!-- Forth Modal -->
+    <div class="modal" id="modal4">
+        <div class="modal-header">
+            <div class="title">Feedback</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            Content for Modal 4
+        </div>
+    </div>
+
+    <!-- Fifth Modal -->
+    <div class="modal" id="modal5">
+        <div class="modal-header">
+            <div class="title">Feedback</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            Content for Modal 5
+        </div>
+    </div>
+
+    <div id="overlay"></div>
+
+</body>
 
 <body>
     <h1>Results</h1>
@@ -38,22 +83,29 @@
     </div>
     
     <div id="creativity">
-        <h2>Creativity
-            <button data-modal-target="#modal" id="feedback-button-creativity" type="button">Feedback</button> 
+        <h2>Creativity:
+            <button data-modal-target="#modal1" id="feedback-button-creativity" class="open-modal-button">Open Modal 1</button>
         </h2>
     </div>
     <div id="technology">
-        <h2>Technology
+        <h2>Technology:
+            <button data-modal-target="#modal2" id="feedback-button-technology" class="open-modal-button">Open Modal 2</button>
         </h2>
     </div>
     <div id="design">
-        <h2>Design</h2>
+        <h2>Design:
+            <button data-modal-target="#modal3" id="feedback-button-design" class="open-modal-button">Open Modal 3</button>
+        </h2>
     </div>
     <div id="impact">
-        <h2>Impact</h2>
+        <h2>Impact:
+            <button data-modal-target="#modal4" id="feedback-button-impact" class="open-modal-button">Open Modal 4</button>
+        </h2>
     </div>
     <div id="completeness">
-        <h2>Completeness</h2>
+        <h2>Completeness:
+            <button data-modal-target="#modal5" id="feedback-button-completeness" class="open-modal-button">Open Modal 5</button>
+        </h2>
     </div>
     <div>
         <script src="static/results.js"></script>
