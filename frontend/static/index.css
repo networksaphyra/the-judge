@@ -4,37 +4,83 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  height: 100vh;
-  text-align: center;
-  padding-top: 3em;
-  background: hsla(262, 84%, 45%, 1);
-  background: linear-gradient(45deg, hsla(262, 84%, 45%, 1) 0%, hsla(277, 65%, 58%, 1) 100%);
-  background: -moz-linear-gradient(45deg, hsla(262, 84%, 45%, 1) 0%, hsla(277, 65%, 58%, 1) 100%);
-  background: -webkit-linear-gradient(45deg, hsla(262, 84%, 45%, 1) 0%, hsla(277, 65%, 58%, 1) 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#5A13D5", endColorstr="#A54FDA", GradientType=1 );
-}
-
-h1 {
-  font-size: 100px;
-  color: #dbc953;
-}
-
-#buttons {
   display: flex;
   flex-direction: column;
-  background-color: red;
-  gap: 2em;
-  padding-top: 150px;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
 
-#buttons a {
-  display: flex;
-  font-size: 30px;
-  padding: .3em;
-  color: black;
-  width: 5em;
-  justify-content: center;
-  text-decoration: none;
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.project-name {
+  font-size: 36px;
+  color: #333;
+}
+
+.project-desc {
+  font-size: 18px;
+  color: white;
+}
+
+.main-body {
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+body {
+  height: 100vh;
+   background: linear-gradient(90deg,#e52e71,#ff8a00);
+
+}
+
+.slider-thumb::before {
+	position: absolute;
+	content: "";
+	left: 33%;
+	top: 20%;
+	width: 450px;
+	height: 450px;
+	background: #17141d;
+	border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
+	will-change: border-radius, transform, opacity;
+	animation: sliderShape 5s linear infinite;
+	display: block;
+	z-index: -1;
+	-webkit-animation: sliderShape 5s linear infinite;
+}
+@keyframes sliderShape{
+  0%,100%{
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  34%{
+      border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+    transform:  translate3d(0,5px,0) rotateZ(0.01deg);
+  }
+  50%{
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  67%{
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
+    transform: translate3d(0,-3px,0) rotateZ(0.01deg);
+  }
 }
