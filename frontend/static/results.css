@@ -21,8 +21,16 @@ h1 {
 body {
     padding-left: 10em;
     padding-right: 10em;
-    background-color: var(--color1);
+    background: hsla(149, 54%, 75%, 1);
 
+    background: linear-gradient(45deg, hsla(149, 54%, 75%, 1) 0%, hsla(206, 71%, 73%, 1) 100%);
+
+    background: -moz-linear-gradient(45deg, hsla(149, 54%, 75%, 1) 0%, hsla(206, 71%, 73%, 1) 100%);
+
+    background: -webkit-linear-gradient(45deg, hsla(149, 54%, 75%, 1) 0%, hsla(206, 71%, 73%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#bfbb7e", endColorstr="#f2ded0", GradientType=1 );
+    }
 }
 
 h2 {

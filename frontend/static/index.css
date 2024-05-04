@@ -42,7 +42,7 @@ body {
 button {
   padding: 10px 20px;
   font-size: 20px;
-  background-color: #cccccc;
+  background-color: var(--color1);
   color: #fff;
   border: none;
   border-radius: 5px;
