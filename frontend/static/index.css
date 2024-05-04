@@ -8,12 +8,33 @@ body {
   height: 100vh;
   text-align: center;
   padding-top: 3em;
+  background: hsla(262, 84%, 45%, 1);
+  background: linear-gradient(45deg, hsla(262, 84%, 45%, 1) 0%, hsla(277, 65%, 58%, 1) 100%);
+  background: -moz-linear-gradient(45deg, hsla(262, 84%, 45%, 1) 0%, hsla(277, 65%, 58%, 1) 100%);
+  background: -webkit-linear-gradient(45deg, hsla(262, 84%, 45%, 1) 0%, hsla(277, 65%, 58%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#5A13D5", endColorstr="#A54FDA", GradientType=1 );
 }
 
 h1 {
   font-size: 100px;
+  color: #dbc953;
 }
 
 #buttons {
-  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  gap: 2em;
+  padding-top: 150px;
+  align-items: center;
+}
+
+#buttons a {
+  display: flex;
+  font-size: 30px;
+  padding: .3em;
+  color: black;
+  width: 5em;
+  justify-content: center;
+  text-decoration: none;
 }
