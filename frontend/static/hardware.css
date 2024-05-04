@@ -35,6 +35,8 @@ body {
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: nowrap;
+    display: flex;
+    justify-content: space-around;
 }
 
 #source {
