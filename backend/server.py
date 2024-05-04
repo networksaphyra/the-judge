@@ -6,34 +6,41 @@ import json
 
 app = Flask(__name__)
 client = openai.OpenAI(api_key=open(".env").readline().strip())
+
 CORS(app)
 
-def generate_response_rating_description(query):
+def generate_response(project_description: str, source_code: list[str]):
     messages = [
-        {"role": "system", "content": ai_config.MODEL_INFORMATION_RATING_DESCIRPTION["CONTEXT"]},
-        {"role": "user", "content": query}
+        {"role": "system", "content": ai_config.MODEL_INFORMATION["CONTEXT"]},
+        {"role": "user", "content": f"Project Description: {project_description}\n\nSource Code:\n{'\n'.join(source_code)}"}
     ]
-    response = client.chat.completions.create(
-        model=ai_config.MODEL_INFORMATION_RATING_DESCIRPTION["MODEL"],
+
+    response = client.chat.create(
+        model=ai_config.MODEL_INFORMATION["MODEL"],
         messages=messages,
+        temperature=ai_config.MODEL_INFORMATION["TEMPERATURE"],
+        max_tokens=ai_config.MODEL_INFORMATION["MAX_TOKENS"],
     )
+
     return json.loads(response.choices[0].message.content)
 
-
 @app.route('/', methods=['POST'])
-def get_members():
+def evaluate_project():
     data = request.get_json()
     print("Received:", data)
 
-    if data and 'query' in data:
-        query = data['query']
-        response_data_rating = generate_response_rating_description(query)
-        print("This is the reponse data\n")
-        print(response_data_rating)
+    if data and 'project_description' in data and 'source_code' in data and 'design' in data:
+        project_description = data['project_description']
+        source_code = data['source_code']
+        design = data['design']
 
-        return jsonify(response_data_rating)
+        response_data = generate_response(project_description, source_code)
+        print("Response data:\n")
+        print(response_data)
+
+        return jsonify(response_data)
     else:
-        return jsonify({'error': 'Invalid request'})
+        return jsonify({'error': 'Missing required fields (project_description, source_code, design)'})
 
 if __name__ == '__main__':
-    app.run(host='localhost', port=8000, debug=True)
+    app.run(host='localhost', port=8080, debug=True)
