@@ -34,7 +34,7 @@ body {
 button {
   padding: 10px 20px;
   font-size: 20px;
-  background-color: #007bff;
+  background-color: #cccccc;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -43,12 +43,12 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #a4a4a4;
 }
 
 body {
   height: 100vh;
-   background: linear-gradient(90deg,#e52e71,#ff8a00);
+  background-color: 	#9FE2BF;
 
 }
 
