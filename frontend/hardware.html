@@ -35,11 +35,18 @@
     <option value="Power Supply">Power Supply</option>
   </select><br><br>
   
-  <label for="sourceCode">Source Code Files:</label><br>
-  <input type="file" id="sourceCode" name="sourceCode" multiple><br><br>
-  
-  <label for="designImages">Design Images Files:</label><br>
-  <input type="file" id="designImages" name="designImages" multiple><br><br>
+  <div class="file-upload">
+    <div id="source">
+        <label for="sourceCode">Source Code Files:</label><br>
+        <input type="file" id="sourceCode" name="sourceCode" multiple>
+        <label class="custom-file-label" id="custom-source" for="sourceCode">Choose files</label>
+    </div>
+    <div id="design">
+        <label for="designImages">Design Images Files:</label><br>
+        <input type="file" id="designImages" name="designImages" multiple>
+        <label class="custom-file-label" id="custom-design" for="designImages">Choose files</label>
+    </div>
+  </div>
   
   <input type="submit" value="Submit">
 </form>

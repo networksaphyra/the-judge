@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+:root {
+    --color1 : #bfbb7e;
+    --color2 : 	#bdbf65;
+    --color3: #f2ded0;
+    --color4: #73655d;
+    --color5: #d99b77;
+}
+
 body {
     font-family: Arial, sans-serif;
     padding-top: 3em;
@@ -17,12 +25,17 @@ body {
     background: -webkit-linear-gradient(45deg, hsla(149, 54%, 75%, 1) 0%, hsla(206, 71%, 73%, 1) 100%);
 
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#bfbb7e", endColorstr="#f2ded0", GradientType=1 );
+<<<<<<< HEAD
     }
+=======
+}
+>>>>>>> 441a1e7a0383f0e1ea03350718ec3c28ea518fac
 
 .file-upload {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 #source {
@@ -31,6 +44,46 @@ body {
     align-items: flex-start;
     text-align: center;
 }
+
+#design {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: center;
+}
+
+/* Styling for uploaded files */
+#file-list {
+    margin-top: 20px;
+}
+
+#file-list li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+/* Styling for custom file input */
+.custom-file-label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+#sourceCode,
+#designImages {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
 
 form {
     margin-top: 50px;
@@ -47,11 +100,15 @@ h1 {
     margin-bottom: 20px;
 }
 
-label {
+.normal-label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
     text-align: left;
+}
+
+label {
+    font-weight: bold;
 }
 
 input[type="text"],
@@ -68,7 +125,7 @@ input[type="file"] {
 }
 
 input[type="submit"] {
-    background-color: #4CAF50;
+    background-color: var(--color2);
     color: white;
     padding: 10px 20px;
     border: none;
