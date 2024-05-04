@@ -1,24 +1,18 @@
-from flask import Flask, request, jsonify
+file_path = (".env")
+with open(file_path, 'r') as file:
+    # Perform operations on the file
+    for line in file:
+        # key = (line.strip()) 
+
 from openai import OpenAI
 
-app = Flask(__name__)
+client = OpenAI(api_key=key)
+completion = client.chat.completions.create(
+  model="gpt-3.5-turbo",
+  messages=[
+    {"role": "system", "content": "You are a poetic assistant, skilled in explaining complex programming concepts with creative flair."},
+    {"role": "user", "content": "Compose a poem that explains the concept of recursion in programming."}
+  ]
+)
 
-@app.route('/')
-def hello():
-    return 'Hello, World!'
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
-actual_key = os.getenv('key')
-
-@app.route('/process', methods=['POST']) 
-def process():
-    data = request.get_json() # retrieve the data sent from JavaScript 
-    # process the data using Python code 
-    description = str(data)
-    
-    return jsonify('clear') 
-
-
-openkey = open()
+print(completion.choices[0].message)
