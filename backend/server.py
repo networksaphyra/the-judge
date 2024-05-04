@@ -8,7 +8,7 @@ app = Flask(__name__)
 client = openai.OpenAI(api_key=open(".env").readline().strip())
 CORS(app)
 
-def generate_response(project_description: str, source_code_files: list, design_image_files: list):
+def generate_response(project_description, source_code_files, design_image_files):
     print("Hello, we're in the response generator function.")
 
     source_code = [file['content'] for file in source_code_files]
@@ -47,5 +47,5 @@ def evaluate_project():
     else:
         return jsonify({'error': 'Missing required fields (project_description, source_code_files, design_image_files)'}), 400
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(host='localhost', port=9000, debug=True)

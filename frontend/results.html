@@ -1,132 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results</title>
-    <link rel="stylesheet" href="static/results.css">
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <style>
+    /* Your existing CSS styles */
+  </style>
 </head>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Modal</title>
-    <link href="static/popup.css" rel="stylesheet">
-    <script defer src="static/popup.js"></script>
-</head>
-
-<style>
-    /* Styles for centering the graph */
-    #graph-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-</style>
-<div id="graph-container">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.0.0/d3.min.js"></script>
-    <script src="static/results.js"></script>
-</div>
-
-<body>
-    <!-- First Modal -->
-    <div class="modal" id="modal1">
-        <div class="modal-header">
-            <div class="title">Feedback</div>
-            <button data-close-button class="close-button">&times;</button>
-        </div>
-        <div class="modal-body">
-            Content for Modal 1
-        </div>
+<body class="bg-gray-100">
+  <div class="container mx-auto py-8">
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Results</h1>
+    <div id="graph-container" class="mb-8">
+      <!-- Graph will be rendered here -->
     </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Overall</h2>
+        <p id="overall" class="text-gray-600">Overall score will be displayed here.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Creativity</h2>
+        <p id="creativity" class="text-gray-600">Creativity score will be displayed here.</p>
+        <button id="feedback-button-creativity" class="bg-blue-500 text-white rounded-md px-4 py-2 mt-4 open-modal-button">View Feedback</button>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Complexity</h2>
+        <p id="complexity" class="text-gray-600">Complexity score will be displayed here.</p>
+        <button id="feedback-button-complexity" class="bg-blue-500 text-white rounded-md px-4 py-2 mt-4 open-modal-button">View Feedback</button>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Design</h2>
+        <p id="design" class="text-gray-600">Design score will be displayed here.</p>
+        <button id="feedback-button-design" class="bg-blue-500 text-white rounded-md px-4 py-2 mt-4 open-modal-button">View Feedback</button>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Usefulness</h2>
+        <p id="usefulness" class="text-gray-600">Usefulness score will be displayed here.</p>
+        <button id="feedback-button-usefulness" class="bg-blue-500 text-white rounded-md px-4 py-2 mt-4 open-modal-button">View Feedback</button>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Completeness</h2>
+        <p id="completeness" class="text-gray-600">Completeness score will be displayed here.</p>
+        <button id="feedback-button-completeness" class="bg-blue-500 text-white rounded-md px-4 py-2 mt-4 open-modal-button">View Feedback</button>
+      </div>
+    </div>
+  </div>
 
-    <!-- Second Modal -->
-    <div class="modal" id="modal2">
-        <div class="modal-header">
-            <div class="title">Feedback</div>
-            <button data-close-button class="close-button">&times;</button>
-        </div>
-        <div class="modal-body">
-            Content for Modal 2
-        </div>
+  <!-- Modal container -->
+  <div id="modal-container" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="modal-content">Modal content will be displayed here.</p>
     </div>
+  </div>
 
-    <!-- Third Modal -->
-    <div class="modal" id="modal3">
-        <div class="modal-header">
-            <div class="title">Feedback</div>
-            <button data-close-button class="close-button">&times;</button>
-        </div>
-        <div class="modal-body">
-            Content for Modal 3
-        </div>
-    </div>
-
-    <!-- Forth Modal -->
-    <div class="modal" id="modal4">
-        <div class="modal-header">
-            <div class="title">Feedback</div>
-            <button data-close-button class="close-button">&times;</button>
-        </div>
-        <div class="modal-body">
-            Content for Modal 4
-        </div>
-    </div>
-
-    <!-- Fifth Modal -->
-    <div class="modal" id="modal5">
-        <div class="modal-header">
-            <div class="title">Feedback</div>
-            <button data-close-button class="close-button">&times;</button>
-        </div>
-        <div class="modal-body">
-            Content for Modal 5
-        </div>
-    </div>
-
-    <div id="overlay"></div>
-    <h1>Results</h1>
-    <hr class="line">
-    <div id="overall" class="result-section1">
-        <h2>Overall</h2>       
-    </div>
-    
-    <div id="creativity" class="result-section">
-        
-        <h2>Creativity:
-            <button data-modal-target="#modal1" id="feedback-button-creativity" class="open-modal-button">Open Modal 1</button>
-        </h2>
-        
-    </div>
-    <div id="technology" class="result-section">
-        <h2>Technology:
-            <button data-modal-target="#modal2" id="feedback-button-technology" class="open-modal-button">Open Modal 2</button>
-        </h2>
-    </div>
-    <div id="design" class="result-section">
-        <h2>Design:
-            <button data-modal-target="#modal3" id="feedback-button-design" class="open-modal-button">Open Modal 3</button>
-        </h2>
-    </div>
-    <div id="impact" class="result-section">
-        <h2>Impact:
-            <button data-modal-target="#modal4" id="feedback-button-impact" class="open-modal-button">Open Modal 4</button>
-        </h2>
-    </div>
-    <div id="completeness" class="result-section">
-        <h2>Completeness:
-            <button data-modal-target="#modal5" id="feedback-button-completeness" class="open-modal-button">Open Modal 5</button>
-        </h2>
-    </div>
-    
-    <script src="script.js"></script>
-
-</body>
-
-</html>
-
-<body>
-
+  <script src="Results.js"></script>
 </body>
 </html>
