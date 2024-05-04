@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif !important;
 }
 
 :root {
@@ -11,6 +11,45 @@
     --color4: #73655d;
     --color5: #d99b77;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.line {
+    border: 0;
+    height: 7px;
+    background-color: #658c5e;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.result-section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 40%; /* Adjusted width */
+}
+
+.result-section1 {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 60%; /* Adjusted width */
+}
+
+
+.result-section h2 {
+    margin-top: 0;
+}
+
 
 h1 {
     padding-top: 40px;
@@ -37,21 +76,23 @@ h2 {
 }
 
 #overall {
-    padding-top: 1em;
-    padding-bottom: 3em;
+
+    text-align: center;
 }
 
 .open-modal-button {
     background-color: #8ba888;
     position: absolute;
-    margin-right: 2em;
+    margin-right: 30em;
     right: 0;
     z-index: 1;
     padding: 0.8em;
     border-radius: 10px;
-    border: 1px solid black;
     font-weight: bold;
-    transition: background-color .3s;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .open-modal-button:hover {
