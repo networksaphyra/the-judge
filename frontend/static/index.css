@@ -1,5 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   height: 100vh;
+  text-align: center;
+  padding-top: 3em;
 }
 
+h1 {
+  font-size: 100px;
+}
+
+#buttons {
+  padding-top: 100px;
+}
