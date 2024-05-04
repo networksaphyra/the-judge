@@ -3,6 +3,14 @@
   padding: 0;
 }
 
+:root {
+  --color1 : #bfbb7e;
+  --color2 : 	#bdbf65;
+  --color3: #f2ded0;
+  --color4: #73655d;
+  --color5: #d99b77;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -27,7 +35,7 @@ body {
   color: white;
 }
 
-.main-body {
+.cmain-body {
   text-align: center;
 }
 
@@ -48,8 +56,15 @@ button:hover {
 
 body {
   height: 100vh;
-  background-color: 	#9FE2BF;
+  background: hsla(149, 54%, 75%, 1);
 
+  background: linear-gradient(45deg, hsla(149, 54%, 75%, 1) 0%, hsla(206, 71%, 73%, 1) 100%);
+
+  background: -moz-linear-gradient(45deg, hsla(149, 54%, 75%, 1) 0%, hsla(206, 71%, 73%, 1) 100%);
+
+  background: -webkit-linear-gradient(45deg, hsla(149, 54%, 75%, 1) 0%, hsla(206, 71%, 73%, 1) 100%);
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#bfbb7e", endColorstr="#f2ded0", GradientType=1 );
 }
 
 .slider-thumb::before {
