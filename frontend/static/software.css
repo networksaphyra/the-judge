@@ -25,17 +25,15 @@ body {
     background: -webkit-linear-gradient(45deg, hsla(149, 54%, 75%, 1) 0%, hsla(206, 71%, 73%, 1) 100%);
 
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#bfbb7e", endColorstr="#f2ded0", GradientType=1 );
-<<<<<<< HEAD
     }
-=======
-}
->>>>>>> 441a1e7a0383f0e1ea03350718ec3c28ea518fac
 
 .file-upload {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: nowrap;
+    display: flex;
+    justify-content: space-around;
 }
 
 #source {
