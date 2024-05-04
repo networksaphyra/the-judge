@@ -31,7 +31,6 @@ body {
 
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#bfbb7e", endColorstr="#f2ded0", GradientType=1 );
     }
-}
 
 h2 {
     padding-top: 30px;
@@ -42,3 +41,7 @@ h2 {
     padding-bottom: 3em;
 }
 
+#feedback-button-creativity {
+    margin-left: 20em;
+    background-color: #8ba888;
+}
