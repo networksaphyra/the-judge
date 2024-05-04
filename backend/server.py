@@ -26,7 +26,7 @@ def generate_response(project_description: str, source_code: list[str]):
     print(f"Response content: {response_dict}")
     return response_dict
 
-@app.route('/', methods=['POST'])
+@app.route('/server', methods=['POST'])
 def evaluate_project():
     data = request.get_json()
     print("Received:", data)
