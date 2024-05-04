@@ -1,10 +1,11 @@
+from openai import OpenAI
+
 file_path = (".env")
 with open(file_path, 'r') as file:
     # Perform operations on the file
     for line in file:
         # key = (line.strip()) 
 
-from openai import OpenAI
 
 client = OpenAI(api_key=key)
 completion = client.chat.completions.create(
