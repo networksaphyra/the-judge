@@ -12,17 +12,19 @@ CORS(app)
 def generate_response(project_description: str, source_code: list[str]):
     messages = [
         {"role": "system", "content": ai_config.MODEL_INFORMATION["CONTEXT"]},
-        {"role": "user", "content": f"Project Description: {project_description}\n\nSource Code:\n{'\n'.join(source_code)}"}
+        {"role": "user", "content": f"Project Description: {project_description}\n\nSource Code:\n{''.join(source_code)}"}
     ]
 
-    response = client.chat.create(
+    response = client.chat.completions.create(
         model=ai_config.MODEL_INFORMATION["MODEL"],
         messages=messages,
         temperature=ai_config.MODEL_INFORMATION["TEMPERATURE"],
         max_tokens=ai_config.MODEL_INFORMATION["MAX_TOKENS"],
     )
 
-    return json.loads(response.choices[0].message.content)
+    response_dict = response.choices[0].message.to_dict()
+    print(f"Response content: {response_dict}")
+    return response_dict
 
 @app.route('/', methods=['POST'])
 def evaluate_project():

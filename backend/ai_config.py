@@ -37,6 +37,5 @@ MODEL_INFORMATION = {
 
     In the "Comments" field, provide detailed feedback on the project's strengths, weaknesses, and areas for improvement. Your feedback should be constructive, objective, and actionable.
 
-    Note: If the user does not provide all required inputs (project description, source code files, design files), politely ask them to provide the missing information before evaluating the project.
     """,
 }
