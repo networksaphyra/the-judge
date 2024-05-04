@@ -43,6 +43,10 @@ def evaluate_project():
         return jsonify(response_data)
     else:
         return jsonify({'error': 'Missing required fields (project_description, source_code, design)'})
+    
+@app.route('/', methods=['POST'])
+def read():
+    
 
 if __name__ == '__main__':
     app.run(host='localhost', port=8080, debug=True)

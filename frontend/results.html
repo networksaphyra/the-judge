@@ -75,40 +75,58 @@
 
 </body>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="results.css">
+</head>
 <body>
     <h1>Results</h1>
-    <hr color=“#658c5e” noshade size="7" style="width:800px; margin: auto;">
-    <div id="overall">
+    <hr class="line">
+    <div id="overall" class="result-section1">
         <h2>Overall</h2>       
     </div>
     
-    <div id="creativity">
+    <div id="creativity" class="result-section">
+        
         <h2>Creativity:
             <button data-modal-target="#modal1" id="feedback-button-creativity" class="open-modal-button">Open Modal 1</button>
         </h2>
+        
     </div>
-    <div id="technology">
+    <div id="technology" class="result-section">
         <h2>Technology:
             <button data-modal-target="#modal2" id="feedback-button-technology" class="open-modal-button">Open Modal 2</button>
         </h2>
     </div>
-    <div id="design">
+    <div id="design" class="result-section">
         <h2>Design:
             <button data-modal-target="#modal3" id="feedback-button-design" class="open-modal-button">Open Modal 3</button>
         </h2>
     </div>
-    <div id="impact">
+    <div id="impact" class="result-section">
         <h2>Impact:
             <button data-modal-target="#modal4" id="feedback-button-impact" class="open-modal-button">Open Modal 4</button>
         </h2>
     </div>
-    <div id="completeness">
+    <div id="completeness" class="result-section">
         <h2>Completeness:
             <button data-modal-target="#modal5" id="feedback-button-completeness" class="open-modal-button">Open Modal 5</button>
         </h2>
     </div>
+    
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+<body>
     <div>
         <script src="static/results.js"></script>
     </div>
+
 </body>
 </html>
