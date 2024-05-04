@@ -26,6 +26,7 @@ function handleFileSelect(event) {
   
   function submitProject(event) {
     event.preventDefault();
+  
     const projectName = document.getElementById('projectName').value;
     const projectDescription = document.getElementById('projectDescription').value;
     const sourceCodeFiles = Array.from(document.getElementById('sourceCode').files);
@@ -42,11 +43,13 @@ function handleFileSelect(event) {
     Promise.all(sourceCodeFiles.map(readFileAsText))
       .then(textFiles => {
         formData.source_code_files = textFiles;
+  
         // Read design image files as text
         return Promise.all(designImageFiles.map(readFileAsText));
       })
       .then(designImageTextFiles => {
         formData.design_image_files = designImageTextFiles;
+  
         // Send data to server
         sendDataToServer(formData);
       })
@@ -68,7 +71,6 @@ function handleFileSelect(event) {
   
   function sendDataToServer(formData) {
     const jsonData = JSON.stringify(formData);
-  
     fetch('http://localhost:9000/evaluate_project', {
       method: 'POST',
       headers: {
@@ -84,7 +86,8 @@ function handleFileSelect(event) {
       })
       .then(data => {
         console.log('Server response:', data);
-        // Handle the server response as needed
+        // Redirect to the results page
+        window.location.href = 'results.html';
       })
       .catch(error => {
         console.error('Error:', error);
@@ -95,4 +98,4 @@ function handleFileSelect(event) {
     document.getElementById('sourceCode').addEventListener('change', handleFileSelect);
     document.getElementById('designImages').addEventListener('change', handleFileSelect2);
     document.querySelector('form').addEventListener('submit', submitProject);
-  })
+  });
